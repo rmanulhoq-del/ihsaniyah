@@ -1,0 +1,6 @@
+{
+  "name": "ইহসানিয়াহ | Ihsaniyah",
+  "description": "১১৪টি সূরার আরবি, উচ্চারণ, বাংলা তর্জমা ও তেলাওয়াত, আল-হাদিস, দৈনন্দিন ফরজ-ওয়াজিব-সুন্নত, নবী-রাসূল ও খোলাফায়ে রাশেদীনের জীবনী, বিজ্ঞানে মুসলিমদের অবদান এবং ইসলামের পূর্ণাঙ্গ দিকনির্দেশনা।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

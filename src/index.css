@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --canvas-bg: #F7F4EC;
+    --surface-bg: #FCFBF7;
+    --surface-muted: #EFEAE0;
+    --border-hairline: #E3DCCB;
+    --ink-primary: #1C1917;
+    --ink-secondary: #57534E;
+    --accent-emerald: #14532D;
+    --accent-bronze: #8B5E2A;
+    color-scheme: light;
+  }
+
+  .dark {
+    --canvas-bg: #080E1A;
+    --surface-bg: #0E1729;
+    --surface-muted: #16233B;
+    --border-hairline: #1F3254;
+    --ink-primary: #EDF2F9;
+    --ink-secondary: #9BAAC4;
+    --accent-emerald: #34D399;
+    --accent-bronze: #E2B857;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+    background-color: var(--canvas-bg);
+    color: var(--ink-primary);
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--canvas-bg);
+    color: var(--ink-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1), color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark body {
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Eye-comfort archival paper & midnight blackish-blue background layer */
+.ihsan-ambient-canvas {
+  position: relative;
+  background-color: #F7F4EC;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139, 94, 42, 0.06), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(20, 83, 45, 0.05), transparent);
+}
+
+.dark .ihsan-ambient-canvas {
+  background-color: #080E1A;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 50% -10%, rgba(30, 64, 135, 0.22), transparent),
+    radial-gradient(ellipse 60% 45% at 100% 100%, rgba(226, 184, 87, 0.06), transparent);
+}
+
+/* Subtle Islamic 8-fold star lattice pattern — ultra low opacity for zero eye strain */
+.ihsan-lattice-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238B5E2A' stroke-width='0.75' stroke-opacity='0.065'%3E%3Cpath d='M36 4 L45 27 L68 36 L45 45 L36 68 L27 45 L4 36 L27 27 Z'/%3E%3Crect x='14' y='14' width='44' height='44'/%3E%3Ccircle cx='36' cy='36' r='10'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 72px 72px;
+}
+
+.dark .ihsan-lattice-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%239BAAC4' stroke-width='0.75' stroke-opacity='0.06'%3E%3Cpath d='M36 4 L45 27 L68 36 L45 45 L36 68 L27 45 L4 36 L27 27 Z'/%3E%3Crect x='14' y='14' width='44' height='44'/%3E%3Ccircle cx='36' cy='36' r='10'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 72px 72px;
+}
+
+.font-editorial {
+  font-family: 'Noto Serif Bengali', Georgia, serif;
+}
+
+.font-arabic {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
